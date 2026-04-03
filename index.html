@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>叽大人的衣帽间</title>
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#FFB6C1">
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -100,11 +100,11 @@
 
         .closet-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             padding: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .cloth-card {
@@ -120,7 +120,7 @@
 
         .cloth-card img {
             width: 100%;
-            height: 180px;
+            aspect-ratio: 3/4;
             object-fit: cover;
         }
 
@@ -199,12 +199,13 @@
         }
 
         .modal-content {
-            background: rgba(255,255,255,0.85);
+            background: rgba(255,255,255,0.95);
             border-radius: 16px;
-            padding: 24px;
-            width: 90%;
-            max-width: 400px;
-            max-height: 80vh;
+            padding: 16px;
+            width: 95%;
+            max-width: none;
+            height: auto;
+            max-height: 92vh;
             overflow-y: auto;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -215,29 +216,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .modal-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
         .close-btn {
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
             color: #999;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
         }
 
         .upload-area {
             border: 2px dashed #ddd;
             border-radius: 12px;
-            padding: 40px 20px;
+            padding: 20px 15px;
             text-align: center;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             transition: border-color 0.3s;
         }
 
@@ -247,25 +252,31 @@
 
         .upload-area img {
             max-width: 100%;
-            max-height: 200px;
+            max-height: 120px;
             border-radius: 8px;
         }
 
+        .upload-text {
+            font-size: 13px;
+            color: #999;
+            margin-top: 8px;
+        }
+
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
 
         .form-label {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #333;
         }
 
         .form-input {
             width: 100%;
-            padding: 10px 12px;
+            padding: 8px 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 14px;
@@ -274,16 +285,16 @@
         .color-picker-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 6px;
+            margin-top: 6px;
         }
 
         .color-option {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             cursor: pointer;
-            border: 3px solid transparent;
+            border: 2px solid transparent;
             transition: all 0.2s;
         }
 
@@ -294,15 +305,15 @@
 
         .submit-btn {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             background: #6366f1;
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 12px;
         }
 
         .submit-btn:disabled {
